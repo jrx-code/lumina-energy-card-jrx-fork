@@ -1,50 +1,45 @@
-# Lumina Energy Dashboard (Ultimate Edition)
+# Lumina Energy Card
 
-An advanced energy flow visualization card for Home Assistant with support for:
+Animated Home Assistant card that visualises PV, battery, grid, load, and EV energy flows in a single dashboard.
 
-- **Multiple PV Strings**: Up to 6 individual solar/PV sensors
-- **Multiple Batteries**: Up to 4 battery systems with SOC and power tracking
-- **Real-time Energy Flows**: Animated visualization of energy movement
-- **EV Charging**: Optional electric vehicle power and SOC display
-- **Multi-language Support**: English, Italian, and German
-- **Customizable Display**: Choose between W or kW units
-- **3D Battery Visualization**: Liquid-fill style battery display with dynamic level
+## Highlights
 
-## Features
-
-- Beautiful animated energy flow paths with speed based on power levels
-- Dynamic color coding (cyan for normal flow, red for grid import, white for battery charging)
-- Responsive SVG graphics that scale to any card size
-- Support for grid import/export with optional value inversion
-- Daily production total display
-- Customizable background image
-- Professional "Orbitron" font for title display
-- Pulsing glow effects on active elements
+- Up to six PV strings and four batteries with automatic aggregation
+- Optional EV charging block with power and SOC readouts
+- Animated SVG flows with dynamic coloration and throttled refresh logic
+- Multi-language UI strings (English, Italiano, Deutsch)
+- Customisable card title, units (W or kW), background image, and update interval
 
 ## Installation
 
-Install via HACS or manually by placing the files from `dist/` (for example `lumina-energy-card.js`) in `/config/www/community/lumina-energy-card/`.
+### HACS (recommended)
 
-### HACS Installation (English)
+1. Open HACS → **Frontend** → three-dot menu → **Custom repositories**.
+2. Add `https://github.com/ratava/lumina-energy-card` as a **Frontend** repository.
+3. Install **Lumina Energy Card** from the Frontend list and restart Home Assistant if prompted.
 
-1. Open HACS in Home Assistant and navigate to "Frontend".
-2. Click the three-dot menu and choose "Custom repositories" if the card is not yet listed.
-3. Enter `https://github.com/Giorgio866/lumina-energy-card`, select "Frontend" as category, and click "Add".
-4. Close the dialog, search for "Lumina Energy Dashboard" in HACS, and install it.
-5. Copy the files from `dist/` (JS, editor, background) to `/config/www/community/lumina-energy-card/` and restart Home Assistant.
+### Manual
 
-### Installazione HACS (Italiano)
+1. Download the assets from the [latest release](https://github.com/ratava/lumina-energy-card/releases).
+2. Copy `dist/lumina-energy-card.js`, `dist/lumina-energy-card-editor.js`, and `dist/lumina_background.jpg` to `/config/www/community/lumina-energy-card/`.
+3. Add the Lovelace resource pointing to `/local/community/lumina-energy-card/lumina-energy-card.js` and reload the frontend.
 
-1. Apri HACS in Home Assistant e vai in "Frontend".
-2. Se la scheda non è presente, clicca sui tre puntini e scegli "Repository personalizzati".
-3. Inserisci `https://github.com/Giorgio866/lumina-energy-card`, imposta la categoria su "Frontend" e clicca su "Aggiungi".
-4. Chiudi la finestra, cerca "Lumina Energy Dashboard" in HACS e procedi con l'installazione.
-5. Copia i file in `dist/` (JS, editor, immagine) in `/config/www/community/lumina-energy-card/` e riavvia Home Assistant.
+## Basic Configuration
 
-### HACS-Installation (Deutsch)
+```yaml
+type: custom:lumina-energy-card
+sensor_pv1: sensor.solar_production
+sensor_daily: sensor.daily_solar
+sensor_bat1_soc: sensor.battery_soc
+sensor_bat1_power: sensor.battery_power
+sensor_home_load: sensor.home_consumption
+sensor_grid_power: sensor.grid_power
+background_image: /local/community/lumina-energy-card/lumina_background.jpg
+```
 
-1. Öffne HACS in Home Assistant und wechsle zu "Frontend".
-2. Falls die Karte noch fehlt, klicke auf das Dreipunkt-Menü und wähle "Benutzerdefinierte Repositories".
-3. Gib `https://github.com/Giorgio866/lumina-energy-card` ein, setze die Kategorie auf "Frontend" und klicke auf "Hinzufügen".
-4. Schließe den Dialog, suche in HACS nach "Lumina Energy Dashboard" und installiere die Karte.
-5. Kopiere die Dateien aus `dist/` (JS, Editor, Hintergrund) nach `/config/www/community/lumina-energy-card/` und starte Home Assistant neu.
+### Useful Options
+
+- `update_interval`: polling cadence in seconds (10–60, default 30)
+- `display_unit`: choose `W` or `kW`
+- `invert_grid`: flips grid import/export sign if needed
+- `sensor_car_power` and `sensor_car_soc`: enable EV panel when provided

@@ -5,7 +5,7 @@
 
 ![Lumina Energy Card Background](dist/lumina_background.jpg)
 
-**Language / Lingua:** [English](#english) | [Italiano](#italiano) | [Deutsch](#deutsch)
+**Language / Lingua / Sprache:** [English](#english) | [Italiano](#italiano) | [Deutsch](#deutsch)
 
 ---
 
@@ -13,7 +13,7 @@
 
 1. Open HACS in Home Assistant and choose **Frontend**.
 1. Click the three-dot menu and select **Custom repositories**.
-1. Paste `https://github.com/Giorgio866/lumina-energy-card`, set the category to **Frontend**, and click **Add**.
+1. Paste `https://github.com/ratava/lumina-energy-card`, set the category to **Frontend**, and click **Add**.
 1. Close the dialog, locate **Lumina Energy Card** in the Frontend list, and install it.
 1. Restart Home Assistant if requested, then add the card from the Lovelace visual editor.
 
@@ -42,13 +42,13 @@ Lumina Energy Card is a Home Assistant custom Lovelace card that renders animate
 
 1. Open HACS in Home Assistant and choose **Frontend**.
 1. Use the three-dot menu → **Custom repositories**.
-1. Enter `https://github.com/Giorgio866/lumina-energy-card`, pick **Frontend**, and click **Add**.
+1. Enter `https://github.com/ratava/lumina-energy-card`, pick **Frontend**, and click **Add**.
 1. Locate **Lumina Energy Card** under Frontend and click **Install**.
 1. Restart Home Assistant if prompted.
 
 #### Manual Installation (EN)
 
-1. Download `dist/lumina-energy-card.js` from the [latest release](https://github.com/Giorgio866/Energy-Dashboard-Updated/releases).
+1. Download `dist/lumina-energy-card.js` from the [latest release](https://github.com/ratava/lumina-energy-card/releases).
 1. Copy the file to `config/www/community/lumina-energy-card/`.
 1. Place `dist/lumina_background.jpg` in the same directory.
 1. Add the Lovelace resource:
@@ -114,7 +114,7 @@ background_image: /local/community/lumina-energy-card/lumina_background.jpg
 ### Support & License (EN)
 
 - License: MIT (see [LICENSE](LICENSE)).
-- Issues & feature requests: submit via [GitHub](https://github.com/Giorgio866/Energy-Dashboard-Updated).
+- Issues & feature requests: submit via [GitHub](https://github.com/ratava/lumina-energy-card).
 
 ### Changelog (EN)
 
@@ -141,13 +141,13 @@ Lumina Energy Card è una scheda Lovelace per Home Assistant che offre grafica a
 
 1. Apri HACS → **Frontend**.
 1. Menu a tre puntini → **Repository personalizzati**.
-1. Inserisci `https://github.com/Giorgio866/lumina-energy-card`, seleziona **Frontend** e premi **Aggiungi**.
+1. Inserisci `https://github.com/ratava/lumina-energy-card`, seleziona **Frontend** e premi **Aggiungi**.
 1. Installa **Lumina Energy Card** dalla sezione Frontend.
 1. Riavvia Home Assistant se richiesto.
 
 ### Installazione Manuale (IT)
 
-1. Scarica `dist/lumina-energy-card.js` dall'[ultima release](https://github.com/Giorgio866/Energy-Dashboard-Updated/releases).
+1. Scarica `dist/lumina-energy-card.js` dall'[ultima release](https://github.com/ratava/lumina-energy-card/releases).
 1. Copia il file in `config/www/community/lumina-energy-card/`.
 1. Copia `dist/lumina_background.jpg` nella stessa cartella.
 1. Aggiungi la risorsa Lovelace come mostrato nella sezione inglese.
@@ -196,13 +196,13 @@ Die Lumina Energy Card zeigt animierte Energieflüsse in Home Assistant, unterst
 
 1. Öffne HACS und wähle **Frontend**.
 1. Dreipunkt-Menü → **Benutzerdefinierte Repositories**.
-1. Trage `https://github.com/Giorgio866/lumina-energy-card` ein, wähle **Frontend** und klicke **Hinzufügen**.
+1. Trage `https://github.com/ratava/lumina-energy-card` ein, wähle **Frontend** und klicke **Hinzufügen**.
 1. Installiere **Lumina Energy Card** aus Frontend.
 1. Starte Home Assistant bei Bedarf neu.
 
 ### Manuelle Installation (DE)
 
-1. Lade `dist/lumina-energy-card.js` aus dem [aktuellen Release](https://github.com/Giorgio866/Energy-Dashboard-Updated/releases).
+1. Lade `dist/lumina-energy-card.js` aus dem [aktuellen Release](https://github.com/ratava/lumina-energy-card/releases).
 1. Kopiere die Datei nach `config/www/community/lumina-energy-card/`.
 1. Lege `dist/lumina_background.jpg` im selben Ordner ab.
 1. Ergänze die Lovelace-Ressource wie im englischen Abschnitt.
@@ -241,4 +241,4 @@ background_image: /local/community/lumina-energy-card/lumina_background.jpg
 
 ---
 
-© 2025 Giorgio866 and contributors. Released under the MIT License.
+© 2025 ratava, Giorgio866, and contributors. Released under the MIT License.

@@ -1,7 +1,7 @@
 /**
  * Lumina Energy Dashboard (Ultimate Edition)
  * Custom Home Assistant card for energy flow visualization
- * Version: 1.0.9
+ * Version: 1.0.1
  * Tested with Home Assistant 2025.12+
  */
 
@@ -324,7 +324,7 @@ class LuminaEnergyCard extends HTMLElement {
   }
 
   static get version() {
-    return '1.0.9';
+    return '1.0.1';
   }
 }
 
@@ -336,7 +336,7 @@ window.customCards.push({
   name: 'Lumina Energy Card (Ultimate Edition)',
   description: 'Advanced energy flow visualization card with support for multiple PV strings and batteries',
   preview: true,
-  documentationURL: 'https://github.com/Giorgio866/Lumina3d-energy-card'
+  documentationURL: 'https://github.com/ratava/lumina-energy-card'
 });
 
 console.info(

@@ -1,7 +1,7 @@
 /**
  * Lumina Energy Dashboard (Ultimate Edition) Editor
  * Visual configuration editor for Lumina Energy Dashboard (Ultimate Edition)
- * Version: 1.0.9
+ * Version: 1.0.1
  * Tested with Home Assistant 2025.12+
  */
 
