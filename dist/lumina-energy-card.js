@@ -2022,6 +2022,8 @@ class LuminaEnergyCardEditor extends HTMLElement {
             { value: 'it', label: 'Italiano' },
             { value: 'de', label: 'Deutsch' },
             { value: 'fr', label: 'Français' }
+		    { value: 'pl', label: 'Polish' }
+
           ],
           display_units: [
             { value: 'W', label: 'Watts (W)' },
@@ -2142,7 +2144,9 @@ class LuminaEnergyCardEditor extends HTMLElement {
             { value: 'en', label: 'Inglese' },
             { value: 'it', label: 'Italiano' },
             { value: 'de', label: 'Tedesco' },
-            { value: 'fr', label: 'Francese' }
+            { value: 'fr', label: 'Francese' },
+			      { value: 'pl', label: 'Polonese' }
+
           ],
           display_units: [
             { value: 'W', label: 'Watt (W)' },
@@ -2259,7 +2263,9 @@ class LuminaEnergyCardEditor extends HTMLElement {
             { value: 'en', label: 'Englisch' },
             { value: 'it', label: 'Italienisch' },
             { value: 'de', label: 'Deutsch' },
-            { value: 'fr', label: 'Französisch' }
+            { value: 'fr', label: 'Französisch' },
+             { value: 'pl', label: 'Polnisch' }
+
           ],
           display_units: [
             { value: 'W', label: 'Watt (W)' },
@@ -2383,7 +2389,9 @@ class LuminaEnergyCardEditor extends HTMLElement {
             { value: 'en', label: 'Anglais' },
             { value: 'it', label: 'Italien' },
             { value: 'de', label: 'Allemand' },
-            { value: 'fr', label: 'Français' }
+            { value: 'fr', label: 'Français' },
+            { value: 'pl', label: 'Polski' }
+
           ],
           display_units: [
             { value: 'W', label: 'Watts (W)' },
@@ -2396,6 +2404,136 @@ class LuminaEnergyCardEditor extends HTMLElement {
           ]
         }
       },
+      pl: {
+      sections: {
+    general: { title: 'Ustawienia ogólne', helper: 'Metadane karty, tło, język i częstotliwość odświeżania.' },
+    entities: { title: 'Wybór encji', helper: 'Wybierz encje PV, baterii, sieci, obciążenia i EV używane przez kartę. Co najmniej musisz wskazać czujnik sumarycznej produkcji PV lub ciągi PV.' },
+    colors: { title: 'Kolory i progi', helper: 'Skonfiguruj progi sieci oraz kolory akcentów dla przepływów i wyświetlania EV.' },
+    typography: { title: 'Typografia', helper: 'Dostrój rozmiary czcionek używanych na karcie.' },
+    about: { title: 'Informacje', helper: 'Autorzy, wersja i przydatne linki.' }
+  },
+  fields: {
+    card_title: { label: 'Tytuł karty', helper: 'Tytuł wyświetlany na górze karty. Pozostaw puste, aby wyłączyć.' },
+    background_image: { label: 'Ścieżka do tła', helper: 'Ścieżka do obrazu tła (np. /local/community/lumina-energy-card/lumina_background.jpg).' },
+    language: { label: 'Język', helper: 'Wybierz język edytora.' },
+    display_unit: { label: 'Jednostka wyświetlania', helper: 'Jednostka używana do formatowania wartości mocy.' },
+    update_interval: { label: 'Interwał odświeżania', helper: 'Częstotliwość odświeżania karty (0 wyłącza ograniczanie).' },
+    animation_speed_factor: { label: 'Współczynnik prędkości animacji', helper: 'Dostosuj mnożnik prędkości animacji (-3x do 3x). Ustaw 0, aby wstrzymać; wartości ujemne odwracają kierunek.' },
+    animation_style: { label: 'Styl animacji', helper: 'Wybierz motyw animacji przepływu (kreski, kropki lub strzałki).' },
+    sensor_pv_total: { label: 'Czujnik PV – suma', helper: 'Opcjonalny czujnik sumarycznej produkcji, wyświetlany jako linia łączna.' },
+    sensor_pv_total_secondary: { label: 'Czujnik PV – suma (falownik 2)', helper: 'Opcjonalny drugi czujnik sumaryczny falownika; gdy podany, dodawany do całkowitej produkcji PV.' },
+    sensor_pv1: { label: 'Ciąg PV 1 (Array 1)', helper: 'Główny czujnik produkcji słonecznej.' },
+    sensor_pv2: { label: 'Ciąg PV 2 (Array 1)' },
+    sensor_pv3: { label: 'Ciąg PV 3 (Array 1)' },
+    sensor_pv4: { label: 'Ciąg PV 4 (Array 1)' },
+    sensor_pv5: { label: 'Ciąg PV 5 (Array 1)' },
+    sensor_pv6: { label: 'Ciąg PV 6 (Array 1)' },
+    solar_array2_title: { label: 'Array 2 (opcjonalnie)' },
+    sensor_pv_array2_1: { label: 'Ciąg PV 1 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    sensor_pv_array2_2: { label: 'Ciąg PV 2 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    sensor_pv_array2_3: { label: 'Ciąg PV 3 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    sensor_pv_array2_4: { label: 'Ciąg PV 4 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    sensor_pv_array2_5: { label: 'Ciąg PV 5 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    sensor_pv_array2_6: { label: 'Ciąg PV 6 (Array 2)', helper: 'Czujnik produkcji słonecznej dla Array 2.' },
+    solar_array2_activation_helper: { label: 'Jeśli ustawiono czujnik PV – suma (falownik 2) lub podano wartości ciągów PV, Array 2 zostanie aktywne i włączy drugi falownik. Musisz też włączyć czujnik dziennej produkcji (Array 2) oraz obciążenie domu (falownik 2).' },
+    show_pv_strings: { label: 'Pokaż pojedyncze ciągi PV', helper: 'Przełącz, aby wyświetlać sumę oraz każdy ciąg PV w osobnych wierszach.' },
+    sensor_daily: { label: 'Czujnik dziennej produkcji (wymagany)', helper: 'Czujnik raportujący dzienne sumy produkcji. Co najmniej czujnik sumaryczny PV lub ciągi PV muszą być zdefiniowane.' },
+    sensor_daily_array2: { label: 'Czujnik dziennej produkcji (Array 2)', helper: 'Czujnik raportujący dzienne sumy produkcji dla Array 2.' },
+    sensor_bat1_soc: { label: 'Bateria 1 SOC' },
+    sensor_bat1_power: { label: 'Bateria 1 moc' },
+    sensor_bat2_soc: { label: 'Bateria 2 SOC' },
+    sensor_bat2_power: { label: 'Bateria 2 moc' },
+    sensor_bat3_soc: { label: 'Bateria 3 SOC' },
+    sensor_bat3_power: { label: 'Bateria 3 moc' },
+    sensor_bat4_soc: { label: 'Bateria 4 SOC' },
+    sensor_bat4_power: { label: 'Bateria 4 moc' },
+    sensor_home_load: { label: 'Obciążenie domu / zużycie (wymagane)', helper: 'Czujnik całkowitego zużycia energii w domu.' },
+    sensor_home_load_secondary: { label: 'Obciążenie domu (falownik 2)', helper: 'Opcjonalny czujnik obciążenia domu dla drugiego falownika.' },
+    sensor_grid_power: { label: 'Moc z sieci', helper: 'Czujnik dodatniego/ujemnego przepływu z/do sieci. Podaj ten czujnik lub oba: import i export.' },
+    sensor_grid_import: { label: 'Czujnik importu z sieci', helper: 'Opcjonalna encja raportująca dodatnią moc importu z sieci.' },
+    sensor_grid_export: { label: 'Czujnik eksportu do sieci', helper: 'Opcjonalna encja raportująca dodatnią moc eksportu do sieci.' },
+    pv_tot_color: { label: 'Kolor PV – suma', helper: 'Kolor stosowany do wiersza tekstowego PV TOT.' },
+    pv_primary_color: { label: 'Kolor przepływu PV 1', helper: 'Kolor używany dla głównej linii animacji PV.' },
+    pv_secondary_color: { label: 'Kolor przepływu PV 2', helper: 'Kolor używany dla drugiej linii animacji PV, gdy jest dostępna.' },
+    pv_string1_color: { label: 'Kolor ciągu PV 1', helper: 'Nadpisanie koloru dla S1 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    pv_string2_color: { label: 'Kolor ciągu PV 2', helper: 'Nadpisanie koloru dla S2 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    pv_string3_color: { label: 'Kolor ciągu PV 3', helper: 'Nadpisanie koloru dla S3 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    pv_string4_color: { label: 'Kolor ciągu PV 4', helper: 'Nadpisanie koloru dla S4 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    pv_string5_color: { label: 'Kolor ciągu PV 5', helper: 'Nadpisanie koloru dla S5 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    pv_string6_color: { label: 'Kolor ciągu PV 6', helper: 'Nadpisanie koloru dla S6 na liście PV. Pozostaw puste, aby dziedziczyć kolor PV – suma.' },
+    load_flow_color: { label: 'Kolor przepływu obciążenia', helper: 'Kolor animowanej linii obciążenia domu.' },
+    house_total_color: { label: 'Kolor HOUSE TOT', helper: 'Kolor stosowany do tekstu/przepływu HOUSE TOT.' },
+    inv1_color: { label: 'Kolor INV 1', helper: 'Kolor stosowany do tekstu/przepływu INV 1.' },
+    inv2_color: { label: 'Kolor INV 2', helper: 'Kolor stosowany do tekstu/przepływu INV 2.' },
+    load_threshold_warning: { label: 'Próg ostrzeżenia obciążenia', helper: 'Zmień kolor obciążenia, gdy wartość bezwzględna jest równa lub większa od tej wartości. Używa wybranej jednostki wyświetlania.' },
+    load_warning_color: { label: 'Kolor ostrzegawczy obciążenia', helper: 'Kolor hex lub CSS stosowany przy progu ostrzeżenia obciążenia.' },
+    load_threshold_critical: { label: 'Próg krytyczny obciążenia', helper: 'Zmień kolor obciążenia, gdy wartość bezwzględna jest równa lub większa od tej wartości. Używa wybranej jednostki wyświetlania.' },
+    load_critical_color: { label: 'Kolor krytyczny obciążenia', helper: 'Kolor hex lub CSS stosowany przy krytycznym progu obciążenia.' },
+    battery_charge_color: { label: 'Kolor przepływu ładowania baterii', helper: 'Kolor używany, gdy energia płynie do baterii.' },
+    battery_discharge_color: { label: 'Kolor przepływu rozładowania baterii', helper: 'Kolor używany, gdy energia pobierana jest z baterii.' },
+    grid_import_color: { label: 'Kolor przepływu importu z sieci', helper: 'Kolor bazowy przed progami, gdy importujesz energię z sieci.' },
+    grid_export_color: { label: 'Kolor przepływu eksportu do sieci', helper: 'Kolor bazowy przed progami, gdy eksportujesz energię do sieci.' },
+    car_flow_color: { label: 'Kolor przepływu EV', helper: 'Kolor linii animacji ładowania pojazdu elektrycznego.' },
+    battery_fill_high_color: { label: 'Kolor wypełnienia baterii (normalny)', helper: 'Kolor „cieczy” przy SOC powyżej niskiego progu.' },
+    battery_fill_low_color: { label: 'Kolor wypełnienia baterii (niski)', helper: 'Kolor „cieczy” przy SOC równym lub poniżej niskiego progu.' },
+    battery_fill_low_threshold: { label: 'Próg niskiego wypełnienia baterii (%)', helper: 'Użyj koloru niskiego wypełnienia, gdy SOC jest równy lub poniżej tego procentu.' },
+    grid_activity_threshold: { label: 'Próg animacji sieci (W)', helper: 'Ignoruj przepływy z/ze sieci o wartości bezwzględnej poniżej tej mocy przy animacji.' },
+    grid_threshold_warning: { label: 'Próg ostrzeżenia sieci', helper: 'Zmień kolor sieci, gdy wartość bezwzględna jest równa lub większa od tej wartości. Używa wybranej jednostki wyświetlania.' },
+    grid_warning_color: { label: 'Kolor ostrzegawczy sieci', helper: 'Kolor hex lub CSS stosowany przy progu ostrzeżenia sieci.' },
+    grid_threshold_critical: { label: 'Próg krytyczny sieci', helper: 'Zmień kolor sieci, gdy wartość bezwzględna jest równa lub większa od tej wartości. Używa wybranej jednostki wyświetlania.' },
+    grid_critical_color: { label: 'Kolor krytyczny sieci', helper: 'Kolor hex lub CSS stosowany przy krytycznym progu sieci.' },
+    invert_grid: { label: 'Odwróć wartości sieci', helper: 'Włącz, jeśli biegunowość importu/eksportu jest odwrócona.' },
+    invert_battery: { label: 'Odwróć wartości baterii', helper: 'Włącz, jeśli biegunowość ładowania/rozładowania jest odwrócona.' },
+    sensor_car_power: { label: 'Czujnik mocy auta 1' },
+    sensor_car_soc: { label: 'Czujnik SOC auta 1' },
+    car1_label: { label: 'Etykieta auta 1', helper: 'Tekst wyświetlany obok wartości pierwszego EV.' },
+    sensor_car2_power: { label: 'Czujnik mocy auta 2' },
+    sensor_car2_soc: { label: 'Czujnik SOC auta 2' },
+    car2_label: { label: 'Etykieta auta 2', helper: 'Tekst wyświetlany obok wartości drugiego EV.' },
+    show_car_soc: { label: 'Pokaż auto 1', helper: 'Przełącz, aby renderować metryki pierwszego EV.' },
+    show_car2: { label: 'Pokaż auto 2', helper: 'Włącz, aby renderować metryki drugiego EV, gdy czujniki są podane.' },
+    car_pct_color: { label: 'Kolor SOC auta', helper: 'Kolor hex tekstu SOC EV (np. #00FFFF).' },
+    car2_pct_color: { label: 'Kolor SOC auta 2', helper: 'Kolor hex tekstu SOC drugiego EV (domyślnie kolor SOC auta).' },
+    car1_name_color: { label: 'Kolor nazwy auta 1', helper: 'Kolor etykiety nazwy auta 1.' },
+    car2_name_color: { label: 'Kolor nazwy auta 2', helper: 'Kolor etykiety nazwy auta 2.' },
+    car1_color: { label: 'Kolor mocy auta 1', helper: 'Kolor stosowany do wartości mocy auta 1.' },
+    car2_color: { label: 'Kolor mocy auta 2', helper: 'Kolor stosowany do wartości mocy auta 2.' },
+    header_font_size: { label: 'Rozmiar czcionki nagłówka (px)', helper: 'Domyślnie 16' },
+    daily_label_font_size: { label: 'Rozmiar czcionki etykiety dziennej (px)', helper: 'Domyślnie 12' },
+    daily_value_font_size: { label: 'Rozmiar czcionki wartości dziennej (px)', helper: 'Domyślnie 20' },
+    pv_font_size: { label: 'Rozmiar czcionki tekstu PV (px)', helper: 'Domyślnie 16' },
+    battery_soc_font_size: { label: 'Rozmiar czcionki SOC baterii (px)', helper: 'Domyślnie 20' },
+    battery_power_font_size: { label: 'Rozmiar czcionki mocy baterii (px)', helper: 'Domyślnie 14' },
+    load_font_size: { label: 'Rozmiar czcionki obciążenia (px)', helper: 'Domyślnie 15' },
+    grid_font_size: { label: 'Rozmiar czcionki sieci (px)', helper: 'Domyślnie 15' },
+    car_power_font_size: { label: 'Rozmiar czcionki mocy auta (px)', helper: 'Domyślnie 15' },
+    car2_power_font_size: { label: 'Rozmiar czcionki mocy auta 2 (px)', helper: 'Domyślnie 15' },
+    car_name_font_size: { label: 'Rozmiar czcionki nazwy auta (px)', helper: 'Domyślnie 15' },
+    car2_name_font_size: { label: 'Rozmiar czcionki nazwy auta 2 (px)', helper: 'Domyślnie 15' },
+    car_soc_font_size: { label: 'Rozmiar czcionki SOC auta (px)', helper: 'Domyślnie 12' },
+    car2_soc_font_size: { label: 'Rozmiar czcionki SOC auta 2 (px)', helper: 'Domyślnie 12' }
+  },
+  options: {
+    languages: [
+      { value: 'en', label: 'English' },
+      { value: 'it', label: 'Italiano' },
+      { value: 'de', label: 'Deutsch' },
+      { value: 'fr', label: 'Français' },
+      { value: 'pl', label: 'Polski' }
+    ],
+    display_units: [
+      { value: 'W', label: 'Waty (W)' },
+      { value: 'kW', label: 'Kilowaty (kW)' }
+    ],
+    animation_styles: [
+      { value: 'dashes', label: 'Kreski (domyślnie)' },
+      { value: 'dots', label: 'Kropki' },
+      { value: 'arrows', label: 'Strzałki' }
+    ]
+  }
+},
+
+	  
     };
   }
 
