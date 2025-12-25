@@ -3,10 +3,10 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 ![Version](https://img.shields.io/badge/version-1.1.21-blue.svg)
 
-Limuna Energy Card repository is <https://github.com/ratava/lumina-energy-card>.
+Limuna Energy Card repository is <https://github.com/jrx-code/lumina-energy-card-jrx-fork>.
 
 
-![Lumina Energy Card Background](dist/lumina_background.jpg)
+![Lumina Energy Card Background](dist/lumina_background-car.png)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://www.paypal.me/giorgiosalierno)
 
@@ -19,7 +19,7 @@ Limuna Energy Card repository is <https://github.com/ratava/lumina-energy-card>.
 
 1. Open HACS in Home Assistant and choose **Frontend**.
 1. Click the three-dot menu and select **Custom repositories**.
-1. Paste `https://github.com/ratava/lumina-energy-card`, set the category to **Dashboard**, and click **Add**.
+1. Paste `https://github.com/jrx-code/lumina-energy-card-jrx-fork`, set the category to **Dashboard**, and click **Add**.
 1. Close the dialog, locate **Lumina Energy Card** in the Frontend list, and install it.
 1. Restart Home Assistant if requested, then add the card from the Lovelace visual editor.
 
